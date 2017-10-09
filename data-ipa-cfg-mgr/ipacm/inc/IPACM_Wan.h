@@ -97,7 +97,6 @@ public:
 	static uint8_t xlat_mux_id;
 	/* IPACM interface name */
 	static char wan_up_dev_name[IF_NAME_LEN];
-	static uint32_t curr_wan_ip;
 	IPACM_Wan(int, ipacm_wan_iface_type, uint8_t *);
 	virtual ~IPACM_Wan();
 
@@ -141,11 +140,6 @@ public:
 #endif
 	}
 
-	static uint32_t getWANIP()
-	{
-		return curr_wan_ip;
-	}
-
 	static bool getXlat_Mux_Id()
 	{
 		return xlat_mux_id;
@@ -182,7 +176,6 @@ public:
 
 private:
 
-	bool is_ipv6_frag_firewall_flt_rule_installed;
 	uint32_t ipv6_frag_firewall_flt_rule_hdl;
 	uint32_t *wan_route_rule_v4_hdl;
 	uint32_t *wan_route_rule_v6_hdl;
@@ -458,6 +451,9 @@ private:
 	/* configure the initial firewall filter rules */
 	int config_dft_firewall_rules_ex(struct ipa_flt_rule_add* rules, int rule_offset,
 		ipa_ip_type iptype);
+
+	/* Change IP Type.*/
+	void config_ip_type(ipa_ip_type iptype);
 
 	/* init filtering rule in wan dl filtering table */
 	int init_fl_rule_ex(ipa_ip_type iptype);
