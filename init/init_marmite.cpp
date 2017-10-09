@@ -26,7 +26,9 @@
    OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-
+#define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
+ #include <sys/_system_properties.h>
+#include <android-base/properties.h>
 #include <cstdlib>
 #include <string>
 
@@ -42,7 +44,8 @@
 #include "property_service.h"
 #include "log.h"
 #include "util.h"
-
+namespace android {
+namespace init {
 char const *heapstartsize;
 char const *heapgrowthlimit;
 char const *heapsize;
@@ -57,7 +60,6 @@ static int read_file2(const char *fname, char *data, int max_size)
 
     fd = open(fname, O_RDONLY);
     if (fd < 0) {
-        ERROR("failed to open '%s'\n", fname);
         return 0;
     }
 
@@ -161,7 +163,7 @@ void vendor_load_properties()
 
     property_set("qemu.hw.mainkeys", "0");
 
-    std::string cmv = property_get("ro.boot.cmv");
+    std::string cmv = android::base::GetProperty("ro.boot.cmv","");
 
     if (cmv == "mv1") {
         /* Swift 2 */
@@ -180,3 +182,4 @@ void vendor_load_properties()
     init_alarm_boot_properties();
 }
 
+}}

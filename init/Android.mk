@@ -22,5 +22,6 @@ LOCAL_C_INCLUDES := system/core/init
 LOCAL_MODULE := libinit_marmite
 LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES := init_marmite.cpp
-
+LOCAL_STATIC_LIBRARIES := \
+     libbase
 include $(BUILD_STATIC_LIBRARY)
