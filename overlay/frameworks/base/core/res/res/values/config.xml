@@ -109,11 +109,9 @@
 
     <!-- When true use the linux /dev/input/event subsystem to detect the switch changes
     on the headphone/microphone jack. When false use the older uevent framework -->
-    <bool name="config_useDevInputEventForAudioJack">true</bool>
 
     <!-- Is the device capable of hot swapping an ICC Card -->
-    <bool name="config_hotswapCapable">true</bool>
-
+ 
     <!-- Wifi driver supports batched scan -->
     <bool translatable="false" name="config_wifi_batched_scan_supported">true</bool>
 
@@ -303,13 +301,13 @@
 
     <!-- When true use the linux /dev/input/event subsystem to detect the switch changes
      on the headphone/microphone jack. When false use the older uevent framework -->
-    <bool name="config_useDevInputEventForAudioJack">true</bool>
+    <add-resource type="bool" name="config_useDevInputEventForAudioJack">true</add-resource>
 
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveNotificationLed">true</bool>
 
     <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
-    <bool name="config_intrusiveBatteryLed">true</bool>
+    <add-resource type="bool" name="config_intrusiveBatteryLed">true</add-resource>
 
     <!-- Hardware keys present on the device, stored as a bit field.
          This integer should equal the sum of the corresponding value for each
@@ -323,7 +321,7 @@
             64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
-    <integer name="config_deviceHardwareKeys">64</integer>
+    <add-resource type="integer" name="config_deviceHardwareKeys">64</add-resource>
 
     <!-- Hardware keys present on the device with the ability to wake, stored as a bit field.
          This integer should equal the sum of the corresponding value for each
@@ -337,7 +335,7 @@
             64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
-    <integer name="config_deviceHardwareWakeKeys">64</integer>
+    <add-resource type="integer" name="config_deviceHardwareWakeKeys">64</add-resource>
 
     <!-- Control the behavior when the user long presses the home button.
             0 - Nothing
@@ -361,7 +359,7 @@
          This needs to match the constants in
          policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
     -->
-    <integer name="config_longPressOnMenuBehavior">2</integer>
+    <add-resource type="integer" name="config_longPressOnMenuBehavior">2</add-resource>
 
     <!-- Control the behavior when the user double-taps the home button.
             0 - Nothing
@@ -376,7 +374,6 @@
     <integer name="config_doubleTapOnHomeBehavior">0</integer>
 
     <!-- Flag indicating if the speed up audio on mt call code should be executed -->
-    <bool name="config_speed_up_audio_on_mt_calls">true</bool>
 
     <!-- Indicate whether closing the lid causes the device to go to sleep and opening
          it causes the device to wake up.
@@ -391,10 +388,10 @@
     <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
 
     <!-- Is the device capable of hot swapping an UICC Card -->
-    <bool name="config_hotswapCapable">true</bool>
+    <add-resource type="bool" name="config_hotswapCapable">true</add-resource>
 
     <!-- Flag indicating if the speed up audio on mt call code should be executed -->
-    <bool name="config_speed_up_audio_on_mt_calls">true</bool>
+    <add-resource type="bool" name="config_speed_up_audio_on_mt_calls">true</add-resource>
 
     <!-- Set this to true to enable the platform's auto-power-save modes like doze and
          app standby.  These are not enabled by default because they require a standard
