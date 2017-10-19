@@ -5,6 +5,7 @@ PRODUCT_PACKAGES += \
     init.marmite.usb.sh \
     init.qcom.early_boot.sh \
     init.qcom.rc \
+    init.recovery.qcom.rc \
     init.qcom.sensors.sh \
     init.qcom.sh \
     init.qcom.usb.rc \
