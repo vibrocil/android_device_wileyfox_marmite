@@ -1,0 +1,24 @@
+[
+  {
+    "remote": "omnirom",
+    "repository": "android_hardware_qcom_display-caf-msm8937",
+    "target_path": "hardware/qcom/display-caf-msm8937",
+    "revision": "android-7.1"
+  },
+  {
+    "remote": "omnirom",
+    "repository": "android_hardware_qcom_media-caf-msm8937",
+    "target_path": "hardware/qcom/media-caf-msm8937",
+    "revision": "android-7.1"
+  },
+  {
+    "remote": "omnirom",
+    "repository": "android_hardware_qcom_audio-caf-msm8937",
+    "target_path": "hardware/qcom/audio-caf-msm8937",
+    "revision": "android-7.1"
+  },
+  {
+    "repository": "android_kernel_wileyfox_msm8937",
+    "target_path": "kernel/wileyfox/msm8937"
+  }
+]
